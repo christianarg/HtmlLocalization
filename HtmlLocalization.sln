@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlLocalization", "HtmlLocalization\HtmlLocalization.csproj", "{FFF184C1-BD81-42A9-9715-F50D586977E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlLocalizationTests", "HtmlLocalizationTests\HtmlLocalizationTests.csproj", "{AF9506F3-1B51-403D-B0D2-B89797C6E83A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFF184C1-BD81-42A9-9715-F50D586977E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFF184C1-BD81-42A9-9715-F50D586977E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFF184C1-BD81-42A9-9715-F50D586977E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFF184C1-BD81-42A9-9715-F50D586977E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF9506F3-1B51-403D-B0D2-B89797C6E83A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF9506F3-1B51-403D-B0D2-B89797C6E83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF9506F3-1B51-403D-B0D2-B89797C6E83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF9506F3-1B51-403D-B0D2-B89797C6E83A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2FD54AF-DD30-41E3-8ACF-3659C75DE328}
+	EndGlobalSection
+EndGlobal
