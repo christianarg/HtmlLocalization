@@ -9,13 +9,16 @@ namespace HtmlLocalization
 {
     public class HtmlLocalizator
     {
+        public static string OpenToken { get; set; } = "{{";
+        public static string CloseToken { get; set; } = "}}";
+
         public string LocalizeHtmlFromDictionary(string html, Dictionary<string, string> keyValues)
         {
             var sb = new StringBuilder(html);
 
             foreach (var item in keyValues)
             {
-                sb.Replace(item.Key, item.Value);
+                sb.Replace($"{OpenToken}{item.Key}{CloseToken}", item.Value);
             }
 
             return sb.ToString();
