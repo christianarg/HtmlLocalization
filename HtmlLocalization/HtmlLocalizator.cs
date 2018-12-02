@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -12,7 +13,14 @@ namespace HtmlLocalization
         public static string OpenToken { get; set; } = "{{";
         public static string CloseToken { get; set; } = "}}";
 
-        public string LocalizeHtmlFromDictionary(string html, Dictionary<string, string> keyValues)
+        public static HtmlLocalizator Instance { get; set; } = new HtmlLocalizator();
+
+        public string LocalizeHtml(HtmlLocalized htmlLocalized, CultureInfo cultureInfo = null)
+        {
+            return LocalizeHtmlFromDictionary(htmlLocalized.Template, htmlLocalized.GetTextByLanguage(cultureInfo ?? CultureInfo.CurrentCulture));
+        }
+
+        public string LocalizeHtmlFromDictionary(string html, IDictionary<string, string> keyValues)
         {
             var sb = new StringBuilder(html);
 

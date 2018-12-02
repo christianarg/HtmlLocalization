@@ -1,13 +1,12 @@
 using HtmlLocalization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using System.IO;
 using System.Reflection;
 
 namespace HtmlLocalizationTests
 {
     [TestClass]
-    public class HtmlLocalizatorTests
+    public class HtmlLocalizatorTests : TestBase
     {
         HtmlLocalizator htmlLocalizator;
 
@@ -35,9 +34,9 @@ namespace HtmlLocalizationTests
         public void LocalizeFromDictionaryFromEmbeded()
         {
             // ARRANGE
-            
-            var assembly = Assembly.GetAssembly(this.GetType());
-            string template = ReadEmbeded(assembly, "HtmlLocalizationTests.someText.html");
+
+            string template = EmbeddedFileUtil.ReadEmbeded("HtmlLocalizationTests.someText.html");
+
             var texts = new Dictionary<string, string>
             {
                 { "prerequisitosSomeDesc", "Contenido del párrafo" },
@@ -50,25 +49,7 @@ namespace HtmlLocalizationTests
             var result = htmlLocalizator.LocalizeHtmlFromDictionary(template, texts);
 
             // ASSERT
-            foreach (var key in texts.Keys)
-            {
-                Assert.IsFalse(result.Contains(key));
-            }
-
-            foreach (var values in texts.Values)
-            {
-                Assert.IsTrue(result.Contains(values));
-            }
-        }
-
-        private string ReadEmbeded(Assembly assembly, string resourceName)
-        {
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                string result = reader.ReadToEnd();
-                return result;
-            }
+            AssertReplacements(texts, result);
         }
     }
 }
