@@ -26,15 +26,15 @@ namespace HtmlLocalizationTests
         {
             // ARRANGE
             var htmlLocalized = new HtmlLocalized();
-            htmlLocalized.Template = EmbeddedFileUtil.ReadEmbeded("HtmlLocalizationTests.someText.html");
+            htmlLocalized.Template = ReadEmbededFile("HtmlLocalizationTests.someText.html");
 
 
             var textsEs = new Dictionary<string, string>
             {
-                { "prerequisitosSomeDesc", "Contenido del párrafo" },
-                { "availableLicenesOfAnyPrerequisite", "Contenido del párrafo" },
-                { "totalLicencesOfAnyPrerequisiteToPurchaseNeededCount", "Contenido del párrafo" },
-                { "alreadyAvailableText", "Contenido del párrafo" },
+                { "prerequisitosSomeDesc", "Contenido del párrafo1" },
+                { "availableLicenesOfAnyPrerequisite", "Contenido del párrafo2" },
+                { "totalLicencesOfAnyPrerequisiteToPurchaseNeededCount", "Contenido del párrafo3" },
+                { "alreadyAvailableText", "Contenido del párrafo4" },
             };
 
             htmlLocalized.RegisterTextsByLanguage(spanish, textsEs);

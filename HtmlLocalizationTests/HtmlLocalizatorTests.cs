@@ -35,7 +35,7 @@ namespace HtmlLocalizationTests
         {
             // ARRANGE
 
-            string template = EmbeddedFileUtil.ReadEmbeded("HtmlLocalizationTests.someText.html");
+            string template = ReadEmbededFile("HtmlLocalizationTests.someText.html");
 
             var texts = new Dictionary<string, string>
             {

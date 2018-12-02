@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmbeddedFileUtil.cs" />
     <Compile Include="HtmlLocalizator.cs" />
     <Compile Include="HtmlLocalized.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using HtmlLocalization;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +8,12 @@ namespace HtmlLocalizationTests
 {
     public class TestBase
     {
-        protected void AssertReplacements(Dictionary<string, string> texts, string result)
+        protected string ReadEmbededFile(string resourceName)
+        {
+            return EmbeddedFileUtil.ReadEmbeded(typeof(TestBase).Assembly, resourceName);
+        }
+
+        protected void AssertReplacements(IDictionary<string, string> texts, string result)
         {
             foreach (var key in texts.Keys)
             {

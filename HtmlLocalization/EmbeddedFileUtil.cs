@@ -1,7 +1,8 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Reflection;
 
-namespace HtmlLocalizationTests
+namespace HtmlLocalization
 {
     public static class EmbeddedFileUtil
     {
@@ -15,9 +16,9 @@ namespace HtmlLocalizationTests
             }
         }
 
-        public static string ReadEmbeded(string resourceName)
+        public static string ReadEmbeded(Type type, string resourceName)
         {
-            return ReadEmbeded(typeof(EmbeddedFileUtil).Assembly, resourceName);
+            return ReadEmbeded(type.Assembly, resourceName);
         }
     }
 }

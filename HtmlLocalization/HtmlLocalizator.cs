@@ -13,6 +13,9 @@ namespace HtmlLocalization
         public static string OpenToken { get; set; } = "{{";
         public static string CloseToken { get; set; } = "}}";
 
+        /// <summary>
+        /// Default single instance.
+        /// </summary>
         public static HtmlLocalizator Instance { get; set; } = new HtmlLocalizator();
 
         public string LocalizeHtml(HtmlLocalized htmlLocalized, CultureInfo cultureInfo = null)
@@ -32,14 +35,14 @@ namespace HtmlLocalization
             return sb.ToString();
         }
 
-        public string LocalizeHtmlFromClass(string html, object @pbject)
-        {
-            var dictionary = @pbject.GetType()
-                                    .GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                                    .ToDictionary(prop => prop.Name, prop => prop.GetValue(@pbject, null)?.ToString());
+        //public string LocalizeHtmlFromClass(string html, object @pbject)
+        //{
+        //    var dictionary = @pbject.GetType()
+        //                            .GetProperties(BindingFlags.Instance | BindingFlags.Public)
+        //                            .ToDictionary(prop => prop.Name, prop => prop.GetValue(@pbject, null)?.ToString());
 
-            return this.LocalizeHtmlFromDictionary(html, dictionary);
+        //    return this.LocalizeHtmlFromDictionary(html, dictionary);
 
-        }
+        //}
     }
 }
